@@ -25,6 +25,13 @@ router.put("/api/burgers/:id", function(req,res){
     })
 })
 
-router.post("")
+router.post("/api/burgers", function(req,res){
+    let col1 = 'burger_name'
+    let burgerName = req.body.burger_name;
+    console.log(burgerName)
+    burger.add(col1,burgerName, function(result){
+        res.json({ id: result.insertId });
+    })
+})
 
 module.exports = router;

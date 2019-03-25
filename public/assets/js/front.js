@@ -29,3 +29,17 @@ $( document ).ready(
         }        
     })
 )
+
+$(".add-burger-button").on("click", function(){
+    let burgerName = $(".new-burger").val()
+    let burger = {
+        burger_name: burgerName
+    }
+    $.ajax("/api/burgers/", {
+        type:"POST",
+        data: burger
+    }).then(function(){
+        console.log("burger added")
+        location.reload();
+    })
+})
