@@ -2,19 +2,30 @@ $( document ).ready(
     $(".devour-burger").on("click", function(){
         let id = $(this).data("id")
         let isDevoured = $(this).data("devoured")
+        console.log(isDevoured)
 
-        let newDevouredState = {
-            devoured: isDevoured
+        if(isDevoured === 0){
+            let newDevouredState = {
+                devoured: 1
+            }
+            updateDevoured(newDevouredState)
+        } 
+        if(isDevoured === 1){
+            let newDevouredState = {
+                devoured: 0
+            }
+            updateDevoured(newDevouredState)
         }
 
-        $.ajax("/api/burgers/" + id, {
-            type:"PUT",
-            data: newDevouredState
-        }).then(
-            function(){
-                console.log('The burger was devoured and new true false is ' + isDevoured)
-                location.reload();
-            }
-        )
+        function updateDevoured(newDevouredState){
+            $.ajax("/api/burgers/" + id, {
+                type:"PUT",
+                data: newDevouredState
+            }).then(
+                function(){
+                    location.reload();
+                }
+            )
+        }        
     })
 )
