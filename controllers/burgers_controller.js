@@ -3,7 +3,14 @@ const express = require("express");
 
 const router = express.Router();
 
-router.get("")
+router.get("/", function(req,res){
+    burger.show(function(data){
+        let handleObject = {
+            burgers: data
+        };
+        res.render("index", handleObject);
+    })
+})
 
 router.post("")
 
