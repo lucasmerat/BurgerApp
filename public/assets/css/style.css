@@ -1,0 +1,14 @@
+.collection-item{
+    display: flex;
+    align-items: unset;
+    justify-content: space-between;
+}
+
+.item-name{
+    width:50%;
+}
+
+.form-box{
+    display:flex;
+    flex-direction: column;
+}
