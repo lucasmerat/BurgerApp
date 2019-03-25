@@ -43,3 +43,14 @@ $(".add-burger-button").on("click", function(){
         location.reload();
     })
 })
+
+$(".delete").on("click", function(){
+    let id = $(this).data("id")
+
+    $.ajax("/api/burgers/" + id, {
+        type:"DELETE",
+    }).then(function(){
+        console.log("burger added")
+        location.reload();
+    })
+})

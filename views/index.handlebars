@@ -4,13 +4,14 @@
         <div class="col s6">
             <h2 class="section center">Current List</h2>
             <ul class="collection">
+                
                 {{#each burgers}}
                 {{#unless devoured}}
                 <li class="collection-item">
                     <div class="item-name">
                         {{burger_name}}
                     </div>
-                    <a class="devour-burger btn waves-light waves-effect" data-id="{{id}}" data-devoured="{{devoured}}">Completed</a>
+                    <a class="devour-burger btn-small waves-light waves-effect purple lighten-2" data-id="{{id}}" data-devoured="{{devoured}}">Completed</a>
                 </li>
                 {{/unless}}
                 {{/each}}
@@ -27,7 +28,8 @@
                     <div class="item-name">
                         {{burger_name}}
                     </div>
-                        <a class="devour-burger btn waves-light waves-effect"  data-devoured="{{devoured}}" data-id="{{id}}">Add again</a>
+                        <a class="devour-burger btn-small waves-light waves-effect purple lighten-2"  data-devoured="{{devoured}}" data-id="{{id}}">Add again</a>
+                        <a class="delete btn-small waves-light waves-effect purple lighten-2" data-devoured="{{devoured}}" data-id="{{id}}"><i class="far fa-trash-alt"></i></a>
                 </li>
                 {{/if}}
                 {{/each}}
@@ -42,7 +44,7 @@
     <h3 class="center">Add another item</h3>
     <div class="form-box">
         <input type="text" class="new-burger" />
-        <button class="add-burger-button btn waves-light waves-effect">Order burger</button>
+        <button class="add-burger-button btn waves-light waves-effect purple lighten-2 center">Add item</button>
     </div>
     
 </div>

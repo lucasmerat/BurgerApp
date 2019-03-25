@@ -9,6 +9,9 @@
 }
 
 .form-box{
-    display:flex;
-    flex-direction: column;
+    text-align: center;
+}
+
+.add-burger-button{
+    width:33%;
 }
