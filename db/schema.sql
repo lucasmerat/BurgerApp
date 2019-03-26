@@ -1,7 +1,7 @@
 CREATE DATABASE shopping_db;
 USE shopping_db;
 
-CREATE TABLE list
+CREATE TABLE items
 (
 	id int NOT NULL AUTO_INCREMENT,
 	item_name varchar(255) NOT NULL,
