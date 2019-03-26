@@ -1,5 +1,4 @@
 $( document ).ready(
-//form
     $(".purchase-item").on("click", function(){
         let id = $(this).data("id")
         let isPurchased = $(this).data("purchased")
