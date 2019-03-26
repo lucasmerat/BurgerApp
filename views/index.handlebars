@@ -5,13 +5,13 @@
             <h2 class="section center">Current List</h2>
             <ul class="collection">
                 
-                {{#each burgers}}
-                {{#unless devoured}}
+                {{#each item}}
+                {{#unless purchased}}
                 <li class="collection-item">
                     <div class="item-name">
-                        {{burger_name}}
+                        {{item_name}}
                     </div>
-                    <a class="devour-burger btn-small waves-light waves-effect purple lighten-2" data-id="{{id}}" data-devoured="{{devoured}}">Completed</a>
+                    <a class="purchase-item btn-small waves-light waves-effect purple lighten-2" data-id="{{id}}" data-purchased="{{purchased}}">Completed</a>
                 </li>
                 {{/unless}}
                 {{/each}}
@@ -22,14 +22,14 @@
 
             <h2 class="section center">Completed items</h2>
             <ul class="collection">
-                {{#each burgers}}
-                {{#if devoured}}
+                {{#each item}}
+                {{#if purchased}}
                 <li class="collection-item">
                     <div class="item-name">
-                        {{burger_name}}
+                        {{item_name}}
                     </div>
-                        <a class="devour-burger btn-small waves-light waves-effect purple lighten-2"  data-devoured="{{devoured}}" data-id="{{id}}">Add again</a>
-                        <a class="delete btn-small waves-light waves-effect purple lighten-2" data-devoured="{{devoured}}" data-id="{{id}}"><i class="far fa-trash-alt"></i></a>
+                        <a class="purchase-item btn-small waves-light waves-effect purple lighten-2"  data-purchased="{{purchased}}" data-id="{{id}}">Add again</a>
+                        <a class="delete btn-small waves-light waves-effect purple lighten-2" data-purchased="{{purchased}}" data-id="{{id}}"><i class="far fa-trash-alt"></i></a>
                 </li>
                 {{/if}}
                 {{/each}}
@@ -43,8 +43,8 @@
 
     <h3 class="center">Add another item</h3>
     <div class="form-box">
-        <input type="text" class="new-burger" />
-        <button class="add-burger-button btn waves-light waves-effect purple lighten-2 center">Add item</button>
+        <input type="text" class="new-item" />
+        <button class="add-item-button btn waves-light waves-effect purple lighten-2 center">Add item</button>
     </div>
     
 </div>

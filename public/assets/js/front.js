@@ -1,26 +1,26 @@
 $( document ).ready(
-    $(".devour-burger").on("click", function(){
+    $(".purchase-item").on("click", function(){
         let id = $(this).data("id")
-        let isDevoured = $(this).data("devoured")
-        console.log(isDevoured)
+        let isPurchased = $(this).data("purchased")
+        console.log(isPurchased)
 
-        if(isDevoured === 0){
-            let newDevouredState = {
-                devoured: 1
+        if(isPurchased === 0){
+            let newPurchasedState = {
+                purchased: 1
             }
-            updateDevoured(newDevouredState)
+            updatePurchased(newPurchasedState)
         } 
-        if(isDevoured === 1){
-            let newDevouredState = {
-                devoured: 0
+        if(isPurchased === 1){
+            let newPurchasedState = {
+                purchased: 0
             }
-            updateDevoured(newDevouredState)
+            updatePurchased(newPurchasedState)
         }
 
-        function updateDevoured(newDevouredState){
-            $.ajax("/api/burgers/" + id, {
+        function updatePurchased(newPurchasedState){
+            $.ajax("/api/items/" + id, {
                 type:"PUT",
-                data: newDevouredState
+                data: newPurchasedState
             }).then(
                 function(){
                     location.reload();
@@ -30,16 +30,16 @@ $( document ).ready(
     })
 )
 
-$(".add-burger-button").on("click", function(){
-    let burgerName = $(".new-burger").val()
-    let burger = {
-        burger_name: burgerName
+$(".add-item-button").on("click", function(){
+    let itemName = $(".new-item").val()
+    let item = {
+        item_name: itemName
     }
-    $.ajax("/api/burgers/", {
+    $.ajax("/api/items/", {
         type:"POST",
-        data: burger
+        data: item
     }).then(function(){
-        console.log("burger added")
+        console.log("item added")
         location.reload();
     })
 })
@@ -47,10 +47,10 @@ $(".add-burger-button").on("click", function(){
 $(".delete").on("click", function(){
     let id = $(this).data("id")
 
-    $.ajax("/api/burgers/" + id, {
+    $.ajax("/api/items/" + id, {
         type:"DELETE",
     }).then(function(){
-        console.log("burger added")
+        console.log("item deleted")
         location.reload();
     })
 })

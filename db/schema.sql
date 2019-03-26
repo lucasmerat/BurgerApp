@@ -1,10 +1,10 @@
-CREATE DATABASE burgers_db;
-USE burgers_db;
+CREATE DATABASE shopping_db;
+USE shopping_db;
 
-CREATE TABLE burgers
+CREATE TABLE list
 (
 	id int NOT NULL AUTO_INCREMENT,
-	burger_name varchar(255) NOT NULL,
-	devoured BOOLEAN DEFAULT false,
+	item_name varchar(255) NOT NULL,
+	purchased BOOLEAN DEFAULT false,
 	PRIMARY KEY (id)
 );

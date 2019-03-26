@@ -1,8 +1,8 @@
-use burgers_db;
+use shopping_db;
 
-INSERT INTO burgers (burger_name) VALUES ('Double Double Animal Style');
-INSERT INTO burgers (burger_name) VALUES ('Mac and Cheese Burger');
-INSERT INTO burgers (burger_name, devoured) VALUES ('Triple burger', true);
-INSERT INTO burgers (burger_name, devoured) VALUES ('Juicy Lucy', true);
-INSERT INTO burgers (burger_name, devoured) VALUES ('Veggie Burger', true);
-INSERT INTO burgers (burger_name) VALUES ('Turkey Burger');
+INSERT INTO items (item_name) VALUES ('Chips');
+INSERT INTO items (item_name) VALUES ('Salsa');
+INSERT INTO items (item_name, purchased) VALUES ('Avocado', true);
+INSERT INTO items (item_name, purchased) VALUES ('Lime', true);
+INSERT INTO items (item_name, purchased) VALUES ('Red Onion', true);
+INSERT INTO items (item_name) VALUES ('Salt');
