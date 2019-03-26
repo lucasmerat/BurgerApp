@@ -13,7 +13,6 @@ if(process.env.JAWSDB_URL){
     database: "shopping_db"
   });
 }
- 
 
 connection.connect(function(err) {
   if (err) {
