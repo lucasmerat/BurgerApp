@@ -1,4 +1,5 @@
 $( document ).ready(
+//form
     $(".purchase-item").on("click", function(){
         let id = $(this).data("id")
         let isPurchased = $(this).data("purchased")
@@ -30,7 +31,15 @@ $( document ).ready(
     })
 )
 
-$(".add-item-button").on("click", function(){
+$('.new-item').keyup(function(event) {
+    if(event.keyCode === 13) {
+      addItem();
+    }
+ });
+
+$(".add-item-button").on("click", addItem);
+
+function addItem(){
     let itemName = $(".new-item").val()
     let item = {
         item_name: itemName
@@ -42,7 +51,7 @@ $(".add-item-button").on("click", function(){
         console.log("item added")
         location.reload();
     })
-})
+}
 
 $(".delete").on("click", function(){
     let id = $(this).data("id")

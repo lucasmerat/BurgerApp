@@ -1,24 +1,37 @@
 <div class="container">
-    <h1 class="center">Shopping List</h1>
+    <header>
+        <h1 class="center">Shopping App</h1>
+    </header>
     <div class="row">
-        <div class="col s6">
+        <div class="input-field col s5 offset-s3">
+            <input type="text" class="new-item" placeholder="Add an item to your current list..." />
+        </div>
+        <div class="input-field col s2">
+            <a class="add-item-button btn-floating btn-large waves-effect waves-light purple"><i
+                    class="fas fa-plus"></i></a>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col s12 l6">
             <h2 class="section center">Current List</h2>
             <ul class="collection">
-                
+
                 {{#each item}}
                 {{#unless purchased}}
                 <li class="collection-item">
                     <div class="item-name">
                         {{item_name}}
                     </div>
-                    <a class="purchase-item btn-small waves-light waves-effect purple lighten-2" data-id="{{id}}" data-purchased="{{purchased}}">Completed</a>
+                    <a class="purchase-item btn-small waves-light waves-effect purple lighten" data-id="{{id}}"
+                        data-purchased="{{purchased}}"><i class="fas fa-check"></i></a>
                 </li>
                 {{/unless}}
                 {{/each}}
             </ul>
 
         </div>
-        <div class="col s6">
+        <div class="col s12 l6">
 
             <h2 class="section center">Completed items</h2>
             <ul class="collection">
@@ -28,8 +41,12 @@
                     <div class="item-name">
                         {{item_name}}
                     </div>
-                        <a class="purchase-item btn-small waves-light waves-effect purple lighten-2"  data-purchased="{{purchased}}" data-id="{{id}}">Add again</a>
-                        <a class="delete btn-small waves-light waves-effect purple lighten-2" data-purchased="{{purchased}}" data-id="{{id}}"><i class="far fa-trash-alt"></i></a>
+                    <div class="buttons">
+                        <a class="purchase-item btn-small waves-light waves-effect purple lighten"
+                            data-purchased="{{purchased}}" data-id="{{id}}"><i class="fas fa-plus"></i></a>
+                        <a class="delete btn-small waves-light waves-effect purple lighten"
+                            data-purchased="{{purchased}}" data-id="{{id}}"><i class="far fa-trash-alt"></i></a>
+                    </div>
                 </li>
                 {{/if}}
                 {{/each}}
@@ -41,10 +58,5 @@
 
 
 
-    <h3 class="center">Add another item</h3>
-    <div class="form-box">
-        <input type="text" class="new-item" />
-        <button class="add-item-button btn waves-light waves-effect purple lighten-2 center">Add item</button>
-    </div>
-    
+
 </div>
