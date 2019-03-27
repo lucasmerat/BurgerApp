@@ -1,4 +1,4 @@
-const express = require("express")
+const express = require("express");
 const app = express();
 
 const PORT = process.env.PORT || 3000;
@@ -18,5 +18,5 @@ const router = require("./controllers/items_controller");
 app.use(router);
 
 app.listen(PORT, function() {
-    console.log("Server listening on: http://localhost:" + PORT);
-  });
+  console.log("Server listening on: http://localhost:" + PORT);
+});
