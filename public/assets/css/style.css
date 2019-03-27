@@ -28,16 +28,20 @@ header {
 }
 
 .item-name {
-  width: 70%;
+  width: 75%;
   font-size: 21px;
   display: flex;
   align-items: center;
 }
 .buttons {
   display: flex;
-  width: 29%;
+  width: 24%;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+.button-box{
+    padding-left: 0px !important;
 }
 
 .form-box {
@@ -70,3 +74,17 @@ input::placeholder {
   border-bottom: 1px solid #ab05b6 !important;
   box-shadow: 0 1px 0 0 #ab05b6 !important;
 }
+
+/* Mobile responsiveness */
+@media screen and (max-width: 576px){
+        h1{
+            font-size: 3em;
+        }
+        h2{
+            font-size: 2.5em;
+        }
+        .buttons{
+            width: 40%;
+            justify-content: space-between;
+        }
+    }

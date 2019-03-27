@@ -3,7 +3,7 @@ $(document).ready(
     let id = $(this).data("id");
     let isPurchased = $(this).data("purchased");
     console.log(isPurchased);
-
+    //Checks which list the item is in and updates the purchase state accordingly
     if (isPurchased === 0) {
       let newPurchasedState = {
         purchased: 1
@@ -28,6 +28,7 @@ $(document).ready(
   })
 );
 
+//Adds a enter key submit listener to trigger the add item function
 $(".new-item").keyup(function(event) {
   if (event.keyCode === 13) {
     addItem();
